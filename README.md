@@ -1,7 +1,25 @@
 # Project: Spotitube
 
+### How to run
+There are 2 ways to run, with Docker or with an embedded MongoDB instance. They both spin up the backend at http://localhost:1997.
+```
+Server: http://localhost:1997
+Username: ryan
+Password: susana
+```
 
-## Throw the old way, ___away___!
+#### How to run with Docker-Compose
+
+1. Open terminal in the project and run `mvn clean package`
+2. Install Docker and Docker-Compose
+3. Run `docker-compose up`
+
+
+#### How to run with an embedded Mongo Server(Non persistent)
+1. Set the environmental variable `testing=true`
+2. Run `com.ryansusana.spotitube.Main`
+
+### Research: Throw the old way, ___away___!
 For my research I would like to talk about swapping out all parts of the HAN spec for Elepy and MongoDB.
 How to 
 

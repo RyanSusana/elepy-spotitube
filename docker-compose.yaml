@@ -1,0 +1,17 @@
+version: '3'
+services:
+  spotitube-mongo:
+    image: mongo:4
+    container_name: "spotitube-db"
+  spotitube-backend-service:
+    build: .
+    container_name: "spotitube-backend"
+    image: spotitube-backend
+    environment:
+      - DATABASE_SERVER=spotitube-db
+    ports:
+      - "1997:1997"
+    links:
+      - spotitube-mongo
+    depends_on:
+      - spotitube-mongo

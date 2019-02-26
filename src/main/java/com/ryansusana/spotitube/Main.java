@@ -2,6 +2,9 @@ package com.ryansusana.spotitube;
 
 import com.elepy.Elepy;
 import com.github.fakemongo.Fongo;
+import com.mongodb.DB;
+import com.mongodb.MongoClient;
+import com.mongodb.ServerAddress;
 import com.ryansusana.spotitube.presentation.Track;
 import com.ryansusana.spotitube.presentation.User;
 import com.ryansusana.spotitube.service.Authentication;
@@ -10,16 +13,25 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Fongo spotitube = new Fongo("spotitube");
+        String databaseServer = System.getenv("DATABASE_SERVER") != null ? System.getenv("DATABASE_SERVER") : "localhost";
+        String databasePort = System.getenv("DATABASE_PORT") != null ? System.getenv("DATABASE_PORT") : "27017";
+
+
+        MongoClient mongoClient = new MongoClient(new ServerAddress(databaseServer, Integer.parseInt(databasePort)));
+
+        DB database = (System.getenv("testing") == null) ? mongoClient.getDB("spotitube-db")
+                : new Fongo("spotitube").getDB("spotitube-db");
+
 
         Elepy elepy = new Elepy()
                 .onPort(1997)
-                .connectDB(spotitube.getDB("fongo-db"))
+                .connectDB(database)
                 .addModelPackage("com.ryansusana.spotitube.presentation")
                 .addAdminFilter(Authentication.class);
 
 
         elepy.start();
+
 
         //DUMMY DATA
         Track track = new Track();
