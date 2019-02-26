@@ -1,31 +1,31 @@
-package com.ryansusana.spotitube.domain;
+package com.ryansusana.spotitube.presentation;
 
 import com.elepy.annotations.*;
 import com.elepy.models.AccessLevel;
-import com.ryansusana.spotitube.services.PlaylistService;
+import com.ryansusana.spotitube.service.PlaylistService;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @RestModel(slug = "/playlists", name = "Playlists")
 @Service(PlaylistService.class)
-@Create(accessLevel = AccessLevel.PUBLIC)
-@Delete(accessLevel = AccessLevel.PUBLIC)
-@Find(accessLevel = AccessLevel.PUBLIC)
-@Update(accessLevel = AccessLevel.PUBLIC)
+@Create(accessLevel = AccessLevel.ADMIN)
+@Delete(accessLevel = AccessLevel.ADMIN)
+@Find(accessLevel = AccessLevel.ADMIN)
+@Update(accessLevel = AccessLevel.ADMIN)
 public class Playlist {
-    private String id;
+    private Integer id;
     private String name;
     private boolean owner;
 
     //Make default an empty list instead of null
     private List<Track> tracks = new ArrayList<>();
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

@@ -1,17 +1,19 @@
-package com.ryansusana.spotitube.domain;
+package com.ryansusana.spotitube.presentation;
 
 import com.elepy.annotations.*;
 import com.elepy.models.AccessLevel;
+import com.ryansusana.spotitube.service.TrackService;
 
 import java.util.Objects;
 
 @RestModel(slug = "/tracks", name = "Tracks")
-@Create(accessLevel = AccessLevel.PUBLIC)
-@Delete(accessLevel = AccessLevel.PUBLIC)
-@Find(accessLevel = AccessLevel.PUBLIC)
-@Update(accessLevel = AccessLevel.PUBLIC)
+@Create(accessLevel = AccessLevel.ADMIN)
+@Delete(accessLevel = AccessLevel.ADMIN)
+@Find(accessLevel = AccessLevel.ADMIN)
+@Update(accessLevel = AccessLevel.ADMIN)
+@Service(TrackService.class)
 public class Track {
-    private String id;
+    private Integer id;
     private String title;
     private String performer;
     private int duration;
@@ -94,11 +96,11 @@ public class Track {
         this.album = album;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -107,7 +109,7 @@ public class Track {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Track track = (Track) o;
-        return id.equals(track.id);
+        return Objects.equals(id, track.id);
     }
 
     @Override
