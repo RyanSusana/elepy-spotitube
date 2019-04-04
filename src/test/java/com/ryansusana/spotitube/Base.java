@@ -6,8 +6,8 @@ import com.elepy.http.Request;
 import com.elepy.http.Response;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.ryansusana.spotitube.presentation.Playlist;
-import com.ryansusana.spotitube.presentation.Track;
+import com.ryansusana.spotitube.playlists.Playlist;
+import com.ryansusana.spotitube.tracks.Track;
 
 import java.io.IOException;
 import java.util.*;

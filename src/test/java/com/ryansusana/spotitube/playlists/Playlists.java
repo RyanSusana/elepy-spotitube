@@ -1,7 +1,7 @@
-package com.ryansusana.spotitube;
+package com.ryansusana.spotitube.playlists;
 
 
-import com.ryansusana.spotitube.presentation.Playlist;
+import com.ryansusana.spotitube.playlists.Playlist;
 
 import java.util.List;
 

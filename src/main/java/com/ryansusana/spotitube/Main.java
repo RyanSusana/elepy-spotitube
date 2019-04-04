@@ -5,9 +5,10 @@ import com.github.fakemongo.Fongo;
 import com.mongodb.DB;
 import com.mongodb.MongoClient;
 import com.mongodb.ServerAddress;
-import com.ryansusana.spotitube.presentation.Track;
-import com.ryansusana.spotitube.presentation.User;
-import com.ryansusana.spotitube.service.Authentication;
+import com.ryansusana.spotitube.playlists.Playlist;
+import com.ryansusana.spotitube.tracks.Track;
+import com.ryansusana.spotitube.users.User;
+import com.ryansusana.spotitube.users.Authentication;
 
 public class Main {
 
@@ -26,7 +27,8 @@ public class Main {
         Elepy elepy = new Elepy()
                 .onPort(1997)
                 .connectDB(database)
-                .addModelPackage("com.ryansusana.spotitube.presentation")
+                .addModel(Playlist.class)
+                .addModel(Track.class)
                 .addAdminFilter(Authentication.class);
 
 

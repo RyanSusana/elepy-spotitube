@@ -1,4 +1,4 @@
-package com.ryansusana.spotitube.presentation;
+package com.ryansusana.spotitube.users;
 
 import com.elepy.annotations.*;
 import com.elepy.models.AccessLevel;

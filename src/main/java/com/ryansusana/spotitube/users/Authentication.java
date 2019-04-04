@@ -1,4 +1,4 @@
-package com.ryansusana.spotitube.service;
+package com.ryansusana.spotitube.users;
 
 
 import com.elepy.annotations.Inject;
@@ -10,7 +10,6 @@ import com.elepy.http.HttpContext;
 import com.elepy.http.HttpMethod;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.ryansusana.spotitube.presentation.User;
 
 import java.io.IOException;
 import java.util.HashMap;

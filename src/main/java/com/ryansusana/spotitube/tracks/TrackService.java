@@ -1,4 +1,4 @@
-package com.ryansusana.spotitube.service;
+package com.ryansusana.spotitube.tracks;
 
 import com.elepy.annotations.Inject;
 import com.elepy.dao.Crud;
@@ -7,8 +7,7 @@ import com.elepy.exceptions.ElepyException;
 import com.elepy.http.HttpContext;
 import com.elepy.routes.DefaultService;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.ryansusana.spotitube.presentation.Playlist;
-import com.ryansusana.spotitube.presentation.Track;
+import com.ryansusana.spotitube.playlists.Playlist;
 
 import java.util.*;
 

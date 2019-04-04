@@ -1,8 +1,7 @@
-package com.ryansusana.spotitube.presentation;
+package com.ryansusana.spotitube.tracks;
 
 import com.elepy.annotations.*;
 import com.elepy.models.AccessLevel;
-import com.ryansusana.spotitube.service.TrackService;
 
 import java.util.Objects;
 

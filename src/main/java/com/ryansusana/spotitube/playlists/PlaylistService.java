@@ -1,4 +1,4 @@
-package com.ryansusana.spotitube.service;
+package com.ryansusana.spotitube.playlists;
 
 import com.elepy.annotations.Inject;
 import com.elepy.annotations.Route;
@@ -13,8 +13,7 @@ import com.elepy.id.NumberIdentityProvider;
 import com.elepy.routes.DefaultService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.ryansusana.spotitube.presentation.Playlist;
-import com.ryansusana.spotitube.presentation.Track;
+import com.ryansusana.spotitube.tracks.Track;
 
 import java.io.IOException;
 import java.util.HashMap;
