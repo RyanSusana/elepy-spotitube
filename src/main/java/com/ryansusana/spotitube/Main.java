@@ -32,7 +32,6 @@ public class Main {
                 .addModel(User.class)
                 .addAdminFilter(Authentication.class);
 
-
         elepy.start();
 
 

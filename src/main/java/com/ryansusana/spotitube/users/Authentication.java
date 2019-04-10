@@ -38,7 +38,7 @@ public class Authentication implements Filter {
         }
     }
 
-    @Route(path = "/login", requestMethod = HttpMethod.POST)
+    @Route(path = "/login", method = HttpMethod.POST)
     public void login(HttpContext context) throws IOException {
 
         //Map of how the JSON object looks. 2 keys "user" and "password"

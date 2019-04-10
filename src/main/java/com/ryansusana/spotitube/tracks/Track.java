@@ -1,15 +1,15 @@
 package com.ryansusana.spotitube.tracks;
 
 import com.elepy.annotations.*;
-import com.elepy.models.AccessLevel;
+import com.elepy.http.AccessLevel;
 
 import java.util.Objects;
 
 @RestModel(slug = "/tracks", name = "Tracks")
-@Create(accessLevel = AccessLevel.ADMIN)
-@Delete(accessLevel = AccessLevel.ADMIN)
-@Find(accessLevel = AccessLevel.ADMIN)
-@Update(accessLevel = AccessLevel.ADMIN)
+@Create(accessLevel = AccessLevel.PROTECTED)
+@Delete(accessLevel = AccessLevel.PROTECTED)
+@Find(accessLevel = AccessLevel.PROTECTED)
+@Update(accessLevel = AccessLevel.PROTECTED)
 @Service(TrackService.class)
 public class Track {
     private Integer id;

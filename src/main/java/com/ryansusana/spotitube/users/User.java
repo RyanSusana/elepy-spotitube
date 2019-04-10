@@ -1,7 +1,7 @@
 package com.ryansusana.spotitube.users;
 
 import com.elepy.annotations.*;
-import com.elepy.models.AccessLevel;
+import com.elepy.http.AccessLevel;
 
 @RestModel(name = "Users", slug = "/users")
 @Create(accessLevel = AccessLevel.PUBLIC)

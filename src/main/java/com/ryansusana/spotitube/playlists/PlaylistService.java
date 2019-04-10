@@ -78,7 +78,7 @@ public class PlaylistService extends DefaultService<Playlist> {
     }
 
 
-    @Route(path = "/playlists/:playlistId/tracks", requestMethod = HttpMethod.GET)
+    @Route(path = "/playlists/:playlistId/tracks", method = HttpMethod.GET)
     public void getTracksOnPlaylist(Request request, Response response) throws JsonProcessingException {
         Playlist playlist = getPlaylist(request);
 
@@ -89,7 +89,7 @@ public class PlaylistService extends DefaultService<Playlist> {
         response.result(objectMapper.writeValueAsString(toReturn));
     }
 
-    @Route(path = "/playlists/:playlistId/tracks", requestMethod = HttpMethod.POST)
+    @Route(path = "/playlists/:playlistId/tracks", method = HttpMethod.POST)
     public String addTrackToPlaylist(Request request, Response response) throws IOException {
 
         Playlist playlist = getPlaylist(request);
@@ -109,7 +109,7 @@ public class PlaylistService extends DefaultService<Playlist> {
     }
 
 
-    @Route(path = "/playlists/:playlistId/tracks/:trackId", requestMethod = HttpMethod.DELETE)
+    @Route(path = "/playlists/:playlistId/tracks/:trackId", method = HttpMethod.DELETE)
     public String removeTrackFromPlaylist(Request request, Response response) throws IOException {
         Track track = getTrack(request);
         Playlist playlist = getPlaylist(request);

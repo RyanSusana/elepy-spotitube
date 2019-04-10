@@ -1,7 +1,7 @@
 package com.ryansusana.spotitube.playlists;
 
 import com.elepy.annotations.*;
-import com.elepy.models.AccessLevel;
+import com.elepy.http.AccessLevel;
 import com.ryansusana.spotitube.tracks.Track;
 
 import java.util.ArrayList;
@@ -9,10 +9,10 @@ import java.util.List;
 
 @RestModel(slug = "/playlists", name = "Playlists")
 @Service(PlaylistService.class)
-@Create(accessLevel = AccessLevel.ADMIN)
-@Delete(accessLevel = AccessLevel.ADMIN)
-@Find(accessLevel = AccessLevel.ADMIN)
-@Update(accessLevel = AccessLevel.ADMIN)
+@Create(accessLevel = AccessLevel.PROTECTED)
+@Delete(accessLevel = AccessLevel.PROTECTED)
+@Find(accessLevel = AccessLevel.PROTECTED)
+@Update(accessLevel = AccessLevel.PROTECTED)
 public class Playlist {
     private Integer id;
     private String name;
