@@ -29,6 +29,7 @@ public class Main {
                 .connectDB(database)
                 .addModel(Playlist.class)
                 .addModel(Track.class)
+                .addModel(User.class)
                 .addAdminFilter(Authentication.class);
 
 
